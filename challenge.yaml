@@ -1,0 +1,25 @@
+---
+- name: Challanges Accpted
+  hosts: testserver
+  remote_user: root
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: installed
+    - name: Create html FIle
+      shell: ech0 "Hello Prasad from Ansible" > /var/www/html/index.html
+      args:
+        excutable: /bin/bash
+      notify:
+        - Reload Apache
+    - name: Public IP
+      shell:
+        cmd: curl http://192.168.43.27/latest/meta-data/public-ipv4
+        register: curl
+    - debug: var=curl.stdout_lines
+  handlers:
+    - name: Reload Apache
+      service:
+         name: httd
+         state: reloaded         

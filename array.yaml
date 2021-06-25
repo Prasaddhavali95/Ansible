@@ -1,0 +1,12 @@
+- hosts: all
+  remote_user: root
+  vars:
+    courses:
+      - Ansible
+      - Docker
+      - Google Cloud
+      - Teraform
+  tasks:
+  - name: Display Value
+    debug:
+      msg: "{{ courses [2] }}"

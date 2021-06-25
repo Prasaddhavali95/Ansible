@@ -1,0 +1,10 @@
+---
+- name: Update web servers
+  hosts: 192.168.1.106
+  remote_user: root
+  tasks:
+    - name: Curl Aws
+      shell:
+        cmd: https://www.youtube.com/
+      register: curl
+    - debug: var=curl.stdout_lines

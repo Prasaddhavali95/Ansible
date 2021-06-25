@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo Testing somthing!!!!!!!!!!!!!!!
+whoami
+cal
+date
+pwd
+ls
+touch a b c
+
