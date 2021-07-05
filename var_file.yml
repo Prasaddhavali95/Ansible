@@ -1,0 +1,9 @@
+- hosts: testserver
+  remote_user: root
+  tasks:
+    - name: Display Value
+      debug:
+        msg: "{{ host_name }}"
+    - name: Display Value
+      debug:
+        msg: "{{ server_name }}"

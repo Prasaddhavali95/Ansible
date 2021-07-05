@@ -1,0 +1,11 @@
+---
+- name: Update web servers
+  hosts: testserver
+  remote_user: root
+
+  tasks:
+    - name: Start service httpd, if not started
+      service:
+        name: httpd
+        state: started
+

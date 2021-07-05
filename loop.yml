@@ -1,0 +1,26 @@
+---
+- hosts: 192.168.1.103
+  remote_user: root
+  become: yes
+  vars:
+    packages:
+      - nano
+      - vim
+      - httpd
+      - mysql
+  tasks:
+    - name: Install software
+      yum:
+        name: "{{ item }}"
+        state: Installed
+      loop: "{{ packages }}"
+ 
+    - name: Remove Software
+      yum:
+        name:
+          - nano
+          - vim
+          - httpd
+          - mysql
+        state: removed     
+   

@@ -1,0 +1,18 @@
+---
+- name: Update web servers
+  hosts: testserver
+  remote_user: root
+  tasks:
+    - name: Start service httpd
+      yum:
+        name: httpd
+        state: Installed
+      notify:
+       - Restart Apache
+  handlers:
+        - name: Start service httpd
+          service:
+            name: httpd
+            state: restarted        
+  
+

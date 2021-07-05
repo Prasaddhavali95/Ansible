@@ -1,0 +1,9 @@
+- hosts: all
+  remote_user: root
+  vars:
+    basic_var: My First variable
+  tasks:
+  - name: Display Value
+    debug:
+      msg: "{{ basic_var }}"
+

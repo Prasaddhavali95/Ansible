@@ -1,0 +1,11 @@
+- hosts: testserver
+  remote_user: root
+  vars_files:
+    - var.yml
+  tasks:
+    - name: Display Value
+      debug:
+        msg: "{{ host_name }}"
+    - name: Display Value
+      debug:
+        msg: "{{ server_name }}"

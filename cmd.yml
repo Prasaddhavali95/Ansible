@@ -1,0 +1,10 @@
+---
+- name: Update web servers
+  hosts: testserver
+  remote_user: root
+  tasks:
+    - name: Curl Aws
+      shell:
+        cmd: curl  https://www.tutorialspoint.com/ipv4/ipv4_subnetting.htm
+      register: curl
+    - debug: var=curl.stdout_lines
